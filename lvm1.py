@@ -16,6 +16,16 @@ def head():
 
 head()
 
+def main():
+    print("""
+    1. Physical Volume
+    2. Volume Group
+    3. Logical Volume
+    4. Increase Volume
+    5. Decrease Volume
+    0. back
+    \n
+    """)
 
 def index():
     print("""
@@ -27,6 +37,10 @@ def index():
     global sys
     sys = (input("select : "))
 
+
+while True:
+    index()
+    
     if sys == "1":
         while True:
             main()
@@ -270,7 +284,7 @@ def index():
                         cmd = ("lvextend --size +{0}G {1}.format(size, drive)")
 
             elif inp == 0:
-                break
+                continue
 
         os.system("clear")
         head()
