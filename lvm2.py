@@ -51,7 +51,6 @@ while True:
 
             try:
                 inp = int(input("select : "))
-                break
             except ValueError:
                 os.system("clear")
                 head()
@@ -74,7 +73,6 @@ while True:
 
                     try:
                         pv = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -146,7 +144,6 @@ while True:
 
                     try:
                         vg = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -223,7 +220,6 @@ while True:
 
                     try:
                         lv = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -306,7 +302,6 @@ while True:
 
                     try:
                         ev = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -400,15 +395,35 @@ while True:
 
 
     elif sys == "2":
-        ip = input("remote IP : ")
+
+        # global ip
+        # ip = input("remote IP : ")
+        # os.system("clear")
+        # head()
+
         while True:
             
+            global ip
+
+            print(("""Press "b" to go back""").center(width))
+            print("\n"*2)
+            ip = input("remote IP : ")
+            
+            if ip == "b":
+                os.system("clear")
+                head()
+                break
+            else:
+                os.system("clear")
+                head()
+
+    
             main()
-            global inp
+
+            global inp1
 
             try:
-                inp = int(input("select : "))
-                break
+                inp1 = int(input("select : "))
             except ValueError:
                 os.system("clear")
                 head()
@@ -416,7 +431,7 @@ while True:
                 continue
             os.system("clear")
 
-            if inp == 1:
+            if inp1 == 1:
                 while True:
                     head()
                 
@@ -431,7 +446,6 @@ while True:
 
                     try:
                         pv = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -458,7 +472,7 @@ while True:
                             continue
                     elif pv == 3:
                         print("\n"*2)
-                        cmd = ("ssh root@{0} pvdispaly".format(ip))
+                        cmd = ("ssh root@{0} pvdisplay".format(ip))
                         os.system(cmd)
                         print("\n"*2)
                         cl = input("Press any key to continue")
@@ -492,7 +506,7 @@ while True:
                 os.system("clear")
                 head()
 
-            elif inp == 2:
+            elif inp1 == 2:
                 while True:
                     head()
                 
@@ -507,7 +521,6 @@ while True:
 
                     try:
                         vg = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -573,7 +586,7 @@ while True:
                 os.system("clear")
                 head()
 
-            elif inp == 3:
+            elif inp1 == 3:
                 while True:
                     head()
 
@@ -588,7 +601,6 @@ while True:
 
                     try:
                         lv = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -663,7 +675,7 @@ while True:
                 os.system("clear")
                 head()
         
-            elif inp == 4:
+            elif inp1 == 4:
                 while True:
                     head()
 
@@ -678,7 +690,6 @@ while True:
 
                     try:
                         ev = int(input("select : "))
-                        break
                     except ValueError:
                         os.system("clear")
                         head()
@@ -765,7 +776,7 @@ while True:
                                 continue
 
 
-            elif inp == 0:
+            elif inp1 == 0:
                 break
 
         os.system("clear")
@@ -773,6 +784,6 @@ while True:
 
     elif sys == "q":
         print(("exiting.....").center(width))
-        os.system("sleep 3")
+        os.system("sleep 2")
         os.system("clear")
         exit()
