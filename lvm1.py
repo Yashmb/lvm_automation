@@ -16,6 +16,18 @@ def head():
 
 head()
 
+def index():
+    print("""
+    1. local system
+    2. remote system
+    q. quit
+    \n
+    """)
+    global sys
+    sys = (input("select : "))
+    os.system("clear")
+    head()
+
 def main():
     print("""
     1. Physical Volume
@@ -27,29 +39,21 @@ def main():
     \n
     """)
 
-def index():
-    print("""
-    1. local system
-    2. remote system
-    q. quit
-    \n
-    """)
-    global sys
-    sys = (input("select : "))
-
-
 while True:
     index()
     
-    if sys == "1":
+    if sys == ("1" and "2" and "3"):
+        print("Select an option")
+    elif sys == "1":
         while True:
             main()
 
             inp = int(input("select : "))
             os.system("clear")
 
-
-            if inp == 1:
+            if inp == "":
+                print("Select an option")
+            elif inp == 1:
                 while True:
                     head()
                 
@@ -63,7 +67,9 @@ while True:
                     """)
                     pv = int(input("select : "))
 
-                    if pv == 1:
+                    if pv == "":
+                        print("Select an option")
+                    elif pv == 1:
                         print("\n"*2)
                         print(os.system("fdisk -l"))
                         cl = input("Press any key to continue")
@@ -124,7 +130,9 @@ while True:
 
                     vg = int(input("select : "))
 
-                    if vg == 1:
+                    if vg == "":
+                        print("Select an option")
+                    elif vg == 1:
                         print("\n"*2)
                         print(os.system("pvdisplay"))
                         cl = input("Press any key to continue")
@@ -189,7 +197,9 @@ while True:
                     """)
                     lv = int(input("select : "))
 
-                    if lv == 1:
+                    if lv == "":
+                        print("Select an option")
+                    elif lv == 1:
                         print("\n"*2)
                         print(os.system("vgdisplay"))
                         cl = input("Press any key to continue")
@@ -256,6 +266,8 @@ while True:
 
                     ev = input("select : ")
 
+                    if ev == "":
+                        print("Select an option")
                     if ev == 1:
                         print("\n"*2)
                         print(os.system("df -h"))
@@ -288,8 +300,6 @@ while True:
 
         os.system("clear")
         head()
-        index()
-
 
 
     elif sys == "2":
